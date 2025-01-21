@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>University Chatbot for Students</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+/* General styles for the entire page */
+body {
+  font-family: "Open Sans", sans-serif; /* Sets the main font for the body */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  background-color: #f9f9f9; /* Light gray background for the page */
+  width: 100%;
+  transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+/* Heading styles for all headings (h1 to h6) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Oswald", sans-serif; /* Bold and distinct font for headings */
+  transition: color 0.3s ease, transform 0.3s ease; /* Adds smooth transition for color and transform */
+}
+
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+  color: #ff9800; /* Change to an orange color on hover */
+  transform: translateY(-5px); /* Slight upward movement on hover */
+}
+
+/* Navigation bar styles */
+.w3-bar {
+  background-color: #333; /* Dark background for navigation */
+  overflow: hidden; /* Ensures the bar stays contained */
+  padding: 10px; /* Adds padding around the navigation bar */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.w3-bar .w3-bar-item {
+  color: white; /* Sets text color to white */
+  padding: 20px 26px; /* Adds space around navigation items */
+  text-align: center; /* Centers text within the items */
+  font-size: 20px; /* Sets font size */
+  text-decoration: none; /* Removes underline from links */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.w3-bar .w3-bar-item:hover {
+  background-color: #444; /* Darker background on hover */
+  color: #ff9800; /* Orange text color on hover */
+}
+
+.w3-bar .w3-bar-item.active {
+  background-color: #444; /* Dark background for active item */
+  color: #fff; /* White text color for active item */
+}
+
+/* Header section styles */
+header {
+  padding: 60px 30px; /* Adds padding around the header */
+  text-align: center; /* Centers content in the header */
+  background-color: #ffffff; /* White background */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+header h1 {
+  font-size: 68px; /* Large font size for the main heading */
+  color: #333; /* Dark gray text color */
+  margin-bottom: 10px; /* Adds space below the heading */
+}
+
+header h6 {
+  font-size: 28px; /* Smaller font for subheading */
+  color: #555; /* Medium gray text color */
+}
+
+header .w3-tag {
+  background-color: #0c0c0c; /* Black background */
+  padding: 5px 15px; /* Padding inside the tag */
+  border-radius: 0; /* Makes the tag rounded */
+  font-weight: bold; /* Bold text */
+}
+
+header button {
+  background-color: #ff9800; /* Orange background for buttons */
+  color: rgb(7, 7, 7); /* Dark text color */
+  border: none; /* Removes default border */
+  padding: 10px 20px; /* Adds padding inside the button */
+  font-size: 18px; /* Sets font size */
+  border-radius: 5px; /* Rounds the corners */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Adds hover effect with smooth transition */
+}
+
+header button:hover {
+  background-color: #e68900; /* Darker orange on hover */
+  transform: translateY(-2px); /* Slight upward movement */
+}
+
+/* Image section styles */
+.w3-display-container img {
+  width: 100%; /* Ensures images take up full width */
+  height: auto; /* Maintains aspect ratio */
+  transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+.w3-display-container:hover img {
+  transform: scale(1.05); /* Slight zoom-in effect on hover */
+}
+
+.w3-display-left {
+  position: absolute; /* Positions element within parent */
+  top: 50%; /* Centers vertically */
+  left: 20px; /* Adds space from the left */
+  transform: translateY(-50%); /* Adjusts for true centering */
+}
+
+header.w3-container {
+  padding: 100px 30px; /* Adjust padding for larger size */
+  background-color: #ffffff; /* Ensure background color is consistent */
+  min-height: 300px; /* Add a minimum height for the box */
+}
+
+/* Blog section styles */
+.w3-container h3 {
+  font-size: 44px; /* Sets font size for blog titles */
+  color: #333; /* Dark gray text */
+  margin-bottom: 19px; /* Adds space below titles */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and transform */
+}
+
+.w3-container h3:hover {
+  color: #ff9800; /* Change color to orange on hover */
+  transform: translateY(-5px); /* Slight upward movement on hover */
+}
+
+.w3-container h5 {
+  font-size: 20px; /* Smaller font for subtitles */
+  color: #888; /* Medium gray text */
+  margin-bottom: 20px; /* Adds space below subtitles */
+}
+
+.w3-container p {
+  font-size: 20px; /* Standard font size for text */
+  line-height: 1.6; /* Adds line spacing */
+  color: #555; /* Medium gray text */
+}
+
+.w3-container button {
+  background-color: #4CAF50; /* Green button background */
+  color: white; /* White text */
+  border: none; /* Removes border */
+  padding: 10px 20px; /* Adds padding inside the button */
+  border-radius: 5px; /* Rounds button corners */
+  cursor: pointer; /* Pointer on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Adds hover effect with smooth transition */
+}
+
+.w3-container button:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: translateY(-2px); /* Slight upward movement */
+}
+
+/* Like button styles */
+.w3-button.w3-white {
+  background-color: #f9f9f9; /* Light gray button */
+  border: 1px solid #ddd; /* Subtle border */
+  padding: 8px 16px; /* Adds padding inside the button */
+  font-size: 21px; /* Sets font size */
+  border-radius: 5px; /* Rounds button corners */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+.w3-button.w3-white:hover {
+  background-color: #e0e0e0; /* Darker gray on hover */
+}
+
+.w3-button.w3-white .fa-thumbs-up {
+  margin-right: 5px; /* Adds space between icon and text */
+}
+
+/* About Us/Sidebar styles */
+.w3-col.l4 {
+  padding: 20px; /* Adds padding inside the sidebar */
+}
+
+.w3-white .w3-container {
+  background-color: #333; /* Dark background */
+  color: #fff; /* White text */
+  padding: 15px; /* Adds padding around the container */
+  border-radius: 10px; /* Rounds container corners */
+}
+
+.w3-white .w3-container h4 {
+  font-size: 20px; /* Font size for section titles */
+  font-weight: bold; /* Bold text */
+}
+
+.w3-white .w3-container p {
+  font-size: 19px; /* Font size for text */
+  color: #ddd; /* Light gray text */
+  line-height: 1.5; /* Adds line spacing */
+}
+
+/* Recent updates list */
+.w3-ul.w3-hoverable li {
+  padding: 15px; /* Adds padding inside list items */
+  display: flex; /* Aligns items horizontally */
+  align-items: center; /* Centers items vertically */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.w3-ul.w3-hoverable li:hover {
+  background-color: #f1f1f1; /* Light gray on hover */
+}
+
+.w3-ul.w3-hoverable li img {
+  border-radius: 100%; /* Makes images circular */
+  margin-right: 15px; /* Adds space to the right of images */
+}
+
+.w3-ul.w3-hoverable li span {
+  color: #333; /* Dark gray text */
+}
+
+/* Footer styles */
+footer {
+  background-color: #333; /* Dark background */
+  color: white; /* White text */
+  padding: 20px 0; /* Adds padding above and below */
+  text-align: center; /* Centers content */
+}
+
+footer p {
+  font-size: 14px; /* Smaller font for footer text */
+  color: #ddd; /* Light gray text */
+}
+
+footer a {
+  color: #ff9800; /* Orange color for links */
+  text-decoration: none; /* Removes underline from links */
+  font-weight: bold; /* Bold links */
+  transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+footer a:hover {
+  color: #ffffff; /* White color on hover */
+}
+
+/* Responsive layout for smaller screens */
+@media screen and (max-width: 900px) {
+  .w3-row {
+    flex-direction: column; /* Stacks columns vertically */
+  }
+
+  .w3-col.l8,
+  .w3-col.l4 {
+    flex: 1 0 100%; /* Full width for smaller screens */
+    margin-bottom: 20px; /* Adds space between sections */
+  }
+
+  header button {
+    width: 100%; /* Full width for buttons */
+  }
+
+  .w3-container h3 {
+    font-size: 20px; /* Smaller font size for smaller screens */
+  }
+
+  .w3-container h5 {
+    font-size: 14px; /* Smaller font size for subtitles */
+  }
+
+  .w3-container p {
+    font-size: 14px; /* Smaller text size for better readability */
+  }
+
+  .w3-col img {
+    width: 100%; /* Ensures images are responsive */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 0; /* No border radius */
+  }
+
+  footer {
+    padding: 10px 0; /* Reduces footer padding on mobile */
+    color: black; /* Changes color for better contrast */
+  }
+}
+/* New CSS class for black text */
+.header-text {
+  color: black !important; /* The !important rule ensures that this style overrides any conflicting styles */
+}
+
+
+</style>
+
+</head>
+<body class="w3-light-grey">
+
+<!-- Navigation bar with social media icons -->
+<div class="w3-bar w3-black w3-hide-small">
+  <a style="margin-left: 200px; font-size: 20px;" href="/" class="w3-bar-item w3-button">Home</a>
+  <a style="font-size: 20px;" href="/login" class="w3-bar-item w3-button">Login</a>
+</div>
+  
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1900px">
+
+  <!-- Header -->
+  <header class="w3-container w3-center w3-padding-68 w3-white" >
+    <h1 class="w3-xxxlarge"><b>Advanced NLP Models for Technical University
+      Information Chatbot</b></h1>
+    <h6>Welcome to the Technical University <span class="w3-tag">Chatbot Project</span></h6>
+  </header>
+
+  <!-- Image header -->
+<header class="w3-display-container" id="home">
+  <img class="w3-image" src="static/img1.webp" alt="University Chatbot" width="1600" height="1060">
+  <div class="w3-display-left w3-padding-large">
+    <h1 class="w3-text-white header-text">University Chatbot</h1>
+    <h1 class="w3-jumbo w3-text-white w3-hide-small header-text"><b>For Students</b></h1>
+    <h6>
+      <button class="w3-button w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off header-text" onclick="window.location.href='login.html'">NEXT</button>
+    </h6>
+  </div>
+</header>
+
+
+  <!-- Grid -->
+<div class="w3-row w3-padding w3-border" style="margin: 0; padding: 0;">
+
+  <!-- Blog entries -->
+  <div class="w3-col l12 s12" style="padding: 0;"> <!-- Change l8 to l12 for full width -->
+
+    <!-- Blog entry -->
+    <div class="w3-container w3-white w3-margin w3-padding-large" style="padding: 0; margin: 0; width: 100%;">
+      <div class="w3-center">
+        <h3>University Chatbot Project</h3>
+        <h5>Developed using NLTK, <span class="w3-opacity">December 2024</span></h5>
+      </div>
+
+      <div class="w3-justify" style="padding: 0;">
+        <!-- Full-width image, removed padding -->
+        <img src="static/img2.jpg" alt="Chatbot Development" style="width: 100%; height: auto; display: block;">
+        <p><strong>About this Project</strong> We have developed a chatbot that serves as a virtual assistant for students at the university. The chatbot is designed to help students with queries about courses, exam schedules, campus facilities, and more. This project was built using the Natural Language Toolkit (NLTK) in Python.</p>
+        <p>The chatbot is intended to be an interactive and user-friendly tool, making it easier for students to access information and get their questions answered quickly.</p>
+        <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p>
+        <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo1')" id="myBtn"><b>Replies  </b> <span class="w3-tag w3-white">1</span></button></p>
+        <p class="w3-clear"></p>
+        <div class="w3-row w3-margin-bottom" id="demo1" style="display:none">
+          <hr>
+            <div class="w3-col l2 m3">
+              <img src="static/img3.jpg" style="width:90px;">
+            </div>
+            <div class="w3-col l10 m9">
+              <h4>Teja <span class="w3-opacity w3-medium">December 5, 2024, 10:00 AM</span></h4>
+              <p>Great work on the chatbot! Looking forward to using it.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <hr>
+<!-- Sidebar content (Move this out of the grid and to the bottom) -->
+<div class="w3-container" style="padding: 0; margin: 0; width: 100%; box-sizing: border-box;">
+  <!-- About Card -->
+  <!-- About Card -->
+  <div class="w3-white w3-margin" style="width: 100%; padding: 0;">
+    <img src="static/img3.jpg" alt="University Team" style="width: 100%; height: auto;" class="w3-grayscale">
+    <div class="w3-container w3-black" style="width: 100%; padding: 20px;">
+      <h4>About Us</h4>
+      <p>We are a team of passionate students working on a chatbot project to enhance the university experience. Our goal is to make it easier for students to access university information and services through a simple chatbot interface.</p>
+    </div>
+  </div>
+  <hr>
+
+  <!-- Recent Updates -->
+  <div class="w3-white w3-margin">
+    <div class="w3-container w3-padding w3-black">
+      <h4>Recent Updates</h4>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+      <li class="w3-padding-16">
+        <img src="static/img4.webp" alt="Update" class="w3-left w3-margin-right" style="width:80px">
+        <span class="w3-large">Chatbot Update</span><br>
+        <span>Added new features</span>
+      </li>
+      <li class="w3-padding-16">
+        <img src="static/robot-blank-sign.jpg" alt="Update" class="w3-left w3-margin-right" style="width:80px">
+        <span class="w3-large">Research Results</span><br>
+        <span>Analyzed user feedback</span>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-padding-48 w3-light-grey w3-large">
+  <p>&copy; 2024 University Chatbot Project. All rights reserved.</p>
+</footer>
+
+<script>
+// Function to display replies when clicked
+function myFunction(id) {
+  var x = document.getElementById(id);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+// Like button
+function likeFunction(btn) {
+  var currentClass = btn.className;
+  if (currentClass.indexOf("w3-white") === -1) {
+    btn.className = "w3-button w3-white w3-border";
+  } else {
+    btn.className = "w3-button w3-white w3-border w3-hover-opacity";
+  }
+}
+</script>
+
+</body>
+</html>

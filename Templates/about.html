@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Open Sans", sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      width: 100%;
+      padding: 20px;
+      background-color: #121212;
+      color: #fff;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url("https://www.codingnepalweb.com/demos/create-glassmorphism-login-form-html-css/hero-bg.jpg"), #000;
+      background-position: center;
+      background-size: cover;
+      z-index: -1;
+    }
+
+    .nav-bar {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 20px;
+      z-index: 10;
+    }
+
+    .nav-bar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 16px;
+      border: 2px solid transparent;
+      transition: 0.3s ease;
+    }
+
+    .nav-bar a:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: #fff;
+      border-radius: 4px;
+    }
+
+    .heading {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1200px;
+      width: 100%;
+      margin-top: 80px;
+    }
+
+    .about-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+    }
+
+    .about-section img {
+      max-width: 45%;
+      border-radius: 10px;
+      margin: 10px;
+    }
+
+    .about-section p {
+      max-width: 50%;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin: 10px;
+    }
+
+    .about-large-section {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation bar -->
+  <div class="nav-bar">
+    <a href="/">Home</a>
+    <a href="/login">Login</a>
+    <a href="/chat">Chat</a>
+    <a href="/about">About</a>
+  </div>
+
+  <!-- Page Title -->
+  <div class="heading">About Us</div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- About Section with Image -->
+    <div class="about-section">
+      <img src="static/img9.jpg" alt="Project Image 1">
+      <p>
+        Welcome to our University Students Chatbot  project. This chatbot is designed to assist university students with their queries, provide emotional support, and guide them with academic-related help. Our goal is to make student life easier and more connected through AI-powered conversation tools.
+      </p>
+    </div>
+
+    <!-- About Section with Another Image -->
+    <div class="about-section">
+      <img src="static/img18.jpg" alt="Project Image 2">
+      <p>
+        This chatbot can analyze student emotions based on text inputs and provide tailored responses to improve engagement. By focusing on emotional intelligence, we aim to create a supportive and accessible system for students.
+      </p>
+    </div>
+
+    <!-- About Section with Final Image -->
+    <div class="about-section">
+      <img src="static/img4.webp" alt="Project Image 3">
+      <p>
+        The technology stack includes Natural Language Processing (NLP) and deep learning to understand user inputs. We have utilized Python for the backend and a dynamic, user-friendly interface for seamless interaction with students.
+      </p>
+    </div>
+
+    <!-- Large About Section without Image -->
+    <div class="about-large-section">
+      This is our **About Page**! Our project is centered around providing a virtual assistant that empowers students by offering insights and solving problems in real time. Whether it's scheduling, academic support, or mental health support, the chatbot is versatile and adaptable. Join us in creating a smarter, more connected university experience!
+    </div>
+  </div>
+</body>
+</html>
