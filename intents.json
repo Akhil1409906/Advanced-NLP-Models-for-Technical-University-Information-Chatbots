@@ -1,0 +1,171 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Good morning",
+        "Good evening",
+        "Hey",
+        "Greetings",
+        "What's up?",
+        "How are you?"
+      ],
+      "responses": [
+        "Hello! How can I assist you with university-related queries?",
+        "Hi there! Welcome to the university chatbot. How can I help you today?",
+        "Greetings! What can I do for you today?"
+      ]
+    },
+    {
+      "tag": "admissions",
+      "patterns": [
+        "How do I apply for admission?",
+        "What is the admission process?",
+        "What documents do I need for admission?",
+        "When does the application process start?",
+        "Is there an entrance exam for admission?"
+      ],
+      "responses": [
+        "You can apply for admission online through our website. Visit the 'Admissions' section for more details.",
+        "The admission process includes submitting an application form, providing required documents, and clearing any entrance exams if applicable."
+      ]
+    },
+    {
+      "tag": "fees",
+      "patterns": [
+        "What is the fee structure?",
+        "How much is the tuition fee?",
+        "Can I pay in installments?",
+        "Are there any scholarships available?",
+        "What is the hostel fee?"
+      ],
+      "responses": [
+        "The fee structure varies depending on the course. Please visit the 'Fee Structure' page on our website.",
+        "We offer scholarships for deserving students based on academic performance and financial need."
+      ]
+    },
+    {
+      "tag": "courses",
+      "patterns": [
+        "What courses are available?",
+        "Do you offer online courses?",
+        "What are the most popular programs?",
+        "Are there any part-time courses?",
+        "Can I switch courses after admission?"
+      ],
+      "responses": [
+        "We offer a wide range of courses across various disciplines. Visit the 'Courses' section on our website for more details.",
+        "Yes, online and part-time courses are available. Check our course catalog for specific offerings."
+      ]
+    },
+    {
+      "tag": "scholarships",
+      "patterns": [
+        "Are scholarships available?",
+        "How do I apply for scholarships?",
+        "What are the eligibility criteria for scholarships?",
+        "Do you offer financial aid?",
+        "Can international students apply for scholarships?"
+      ],
+      "responses": [
+        "Yes, scholarships are available for eligible students. Visit the 'Scholarships' page for details.",
+        "You can apply for scholarships through our online portal. Check the deadlines and criteria for each scholarship."
+      ]
+    },
+    {
+      "tag": "hostel",
+      "patterns": [
+        "Is hostel accommodation available?",
+        "What is the hostel fee?",
+        "How do I apply for hostel accommodation?",
+        "Are there separate hostels for boys and girls?",
+        "What facilities are available in the hostels?"
+      ],
+      "responses": [
+        "Yes, hostel accommodation is available. Visit the 'Hostels' section on our website for details.",
+        "The hostel fee varies by room type. Please check our fee structure for more information."
+      ]
+    },
+    {
+      "tag": "exam_schedule",
+      "patterns": [
+        "When are the exams?",
+        "What is the exam schedule?",
+        "How do I download the timetable?",
+        "Are exams online or offline?",
+        "Can I postpone my exams?"
+      ],
+      "responses": [
+        "The exam schedule is available on the university's website under the 'Examinations' section.",
+        "Exams are generally held as per the academic calendar. Please contact the exam department for specific queries."
+      ]
+    },
+    {
+      "tag": "placements",
+      "patterns": [
+        "Do you have a placement cell?",
+        "What companies visit for placements?",
+        "What is the average package offered?",
+        "Are internships part of the placement process?",
+        "How do I prepare for campus placements?"
+      ],
+      "responses": [
+        "Yes, we have a dedicated placement cell to assist students with job opportunities.",
+        "Top companies visit our campus for placements. Visit the 'Placements' section for more details."
+      ]
+    },
+    {
+      "tag": "library",
+      "patterns": [
+        "Is there a library on campus?",
+        "What are the library timings?",
+        "Can I borrow books from the library?",
+        "Are e-books available?",
+        "How do I get a library card?"
+      ],
+      "responses": [
+        "Yes, the campus library is open to all students. Visit the 'Library' section for timings and rules.",
+        "You can borrow books and access e-books through your student account."
+      ]
+    },
+    {
+      "tag": "sports",
+      "patterns": [
+        "What sports facilities are available?",
+        "Is there a gym on campus?",
+        "Do you have a football team?",
+        "Can I participate in sports events?",
+        "Are there coaches for training?"
+      ],
+      "responses": [
+        "We have excellent sports facilities including a gym, basketball court, and more. Visit the 'Sports' section for details.",
+        "Yes, we have dedicated coaches for various sports. Contact the sports department for more information."
+      ]
+    },
+    {
+      "tag": "contact",
+      "patterns": [
+        "How do I contact the university?",
+        "What is the university's phone number?",
+        "Can I get the email address for support?",
+        "Where is the university located?",
+        "What are the office hours?"
+      ],
+      "responses": [
+        "You can contact us via phone or email. Visit the 'Contact Us' page for details.",
+        "Our office is open from 9 AM to 5 PM, Monday to Friday."
+      ]
+    },
+    {
+      "tag": "fallback",
+      "patterns": [],
+      "responses": [
+        "I'm sorry, I didn't understand that. Could you please rephrase?",
+        "I couldn't catch that. Can you clarify your query?",
+        "Apologies, but I need more details to assist you. Could you try again?"
+      ]
+    }
+  ]
+}
